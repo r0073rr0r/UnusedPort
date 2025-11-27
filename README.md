@@ -26,7 +26,7 @@ This bash script checks which ports from firewall rules are currently not in use
 
 Install from the official APT repository:
 
-1. Add the repository and GPG key:
+- Add the repository and GPG key:
 
 ```bash
 # Download and add the GPG key
@@ -36,14 +36,14 @@ curl -fsSL https://peace.dbase.in.rs/public.key | sudo gpg --dearmor -o /usr/sha
 echo "deb [signed-by=/usr/share/keyrings/peace-repo.gpg] https://peace.dbase.in.rs stable main" | sudo tee /etc/apt/sources.list.d/peace.list
 ```
 
-1. Update package list and install:
+- Update package list and install:
 
 ```bash
 sudo apt update
 sudo apt install unused-port
 ```
 
-1. Verify installation:
+- Verify installation:
 
 ```bash
 unused_port --help

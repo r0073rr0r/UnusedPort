@@ -26,7 +26,7 @@ Ova bash skripta proverava koje portove iz firewall pravila trenutno nisu u upot
 
 Instaliraj iz zvaničnog APT repozitorijuma:
 
-1. Dodaj repozitorijum i GPG ključ:
+- Dodaj repozitorijum i GPG ključ:
 
 ```bash
 # Preuzmi i dodaj GPG ključ
@@ -36,14 +36,14 @@ curl -fsSL https://peace.dbase.in.rs/public.key | sudo gpg --dearmor -o /usr/sha
 echo "deb [signed-by=/usr/share/keyrings/peace-repo.gpg] https://peace.dbase.in.rs stable main" | sudo tee /etc/apt/sources.list.d/peace.list
 ```
 
-1. Ažuriraj listu paketa i instaliraj:
+- Ažuriraj listu paketa i instaliraj:
 
 ```bash
 sudo apt update
 sudo apt install unused-port
 ```
 
-1. Proveri instalaciju:
+- Proveri instalaciju:
 
 ```bash
 unused_port --help
