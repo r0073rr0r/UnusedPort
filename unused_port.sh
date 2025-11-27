@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Version
-VERSION="1.0.2"
+VERSION="1.0.3"
 
 # Exit on undefined variables (but allow command failures for grep, etc. since they're expected)
 # Note: We use 'set -u' instead of 'set -eu' because grep/lsof failures when ports aren't found are expected,
