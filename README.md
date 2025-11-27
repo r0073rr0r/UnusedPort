@@ -84,6 +84,8 @@ chmod +x unused_port.sh
 
 ## 💡 Usage
 
+[![asciicast](https://asciinema.org/a/Xv6Ul6kVzkTCxKj5gE13Rp7RM.svg)](https://asciinema.org/a/Xv6Ul6kVzkTCxKj5gE13Rp7RM?t=3)
+
 ### Basic Commands
 
 ```bash
