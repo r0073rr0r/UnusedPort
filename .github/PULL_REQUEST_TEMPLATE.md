@@ -1,7 +1,11 @@
+# Pull Request
+
 ## Description
+
 Brief description of what this PR does.
 
 ## Type of Change
+
 - [ ] Bug fix (non-breaking change which fixes an issue)
 - [ ] New feature (non-breaking change which adds functionality)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
@@ -9,12 +13,15 @@ Brief description of what this PR does.
 - [ ] Code refactoring
 
 ## Changes Made
-- 
-- 
-- 
+
+-
+-
+-
 
 ## Testing
+
 Describe the tests you ran to verify your changes:
+
 - [ ] Tested on UFW
 - [ ] Tested on iptables
 - [ ] Tested with ss
@@ -24,6 +31,7 @@ Describe the tests you ran to verify your changes:
 - [ ] Tested restore functionality
 
 ## Checklist
+
 - [ ] My code follows the style guidelines of this project
 - [ ] I have commented my code, particularly in hard-to-understand areas
 - [ ] I have made corresponding changes to the documentation
@@ -32,11 +40,13 @@ Describe the tests you ran to verify your changes:
 - [ ] I have checked that my changes work on different Linux distributions (if applicable)
 
 ## Related Issues
+
 Closes #(issue number)
 
 ## Screenshots (if applicable)
+
 Add screenshots to help explain your changes.
 
 ## Additional Notes
-Any additional information that reviewers should know.
 
+Any additional information that reviewers should know.

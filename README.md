@@ -22,7 +22,9 @@ This bash script checks which ports from firewall rules are currently not in use
 
 ## 🚀 Installation
 
-1. Clone or download the script:
+### Option 1: Using Git (Full Repository)
+
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/r0073rr0r/UnusedPort.git
@@ -32,6 +34,24 @@ cd UnusedPort
 1. Make it executable:
 
 ```bash
+chmod +x unused_port.sh
+```
+
+### Option 2: Using curl (Script Only)
+
+Download only the script:
+
+```bash
+curl -o unused_port.sh https://raw.githubusercontent.com/r0073rr0r/UnusedPort/main/unused_port.sh
+chmod +x unused_port.sh
+```
+
+### Option 3: Using wget (Script Only)
+
+Download only the script:
+
+```bash
+wget https://raw.githubusercontent.com/r0073rr0r/UnusedPort/main/unused_port.sh
 chmod +x unused_port.sh
 ```
 
@@ -133,58 +153,6 @@ sudo ./unused_port.sh --restore-from firewall_backup_ufw_20240101_120000.txt
 ./unused_port.sh --show-last-backup
 ```
 
-## 🪟 Testing on Windows
-
-Since this is a Linux script, you can test it on Windows in several ways:
-
-### Option 1: WSL (Windows Subsystem for Linux)
-
-1. Install WSL:
-
-```powershell
-wsl --install
-```
-
-1. Run WSL and navigate to the project:
-
-```bash
-cd /mnt/d/Projects/UnusedPort
-./unused_port.sh --help
-```
-
-### Option 2: Docker
-
-1. Install Docker Desktop for Windows
-1. Run a Linux container:
-
-```bash
-docker run -it --rm -v /d/Projects/UnusedPort:/workspace ubuntu:latest bash
-```
-
-1. Inside the container:
-
-```bash
-apt-get update
-apt-get install -y bash ufw iptables iproute2 lsof
-cd /workspace
-chmod +x unused_port.sh
-./unused_port.sh --help
-```
-
-### Option 3: Virtual Machine
-
-Use VirtualBox or VMware with a Linux distribution.
-
-## 🧪 Testing
-
-To run tests, see `tests/README.md` or run:
-
-```bash
-# In Linux environment (WSL, Docker, or Linux VM)
-cd tests
-./run_tests.sh
-```
-
 ## ⚠️ Security
 
 ⚠️ **WARNING**: Removing firewall rules can affect system security and connectivity. Always:
@@ -207,7 +175,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👤 Author
 
-**Velimir Majstorov**
+Velimir Majstorov
 
 ## 🤝 Contributing
 

@@ -22,7 +22,9 @@ Ova bash skripta proverava koje portove iz firewall pravila trenutno nisu u upot
 
 ## 🚀 Instalacija
 
-1. Klonirajte ili preuzmite skriptu:
+### Opcija 1: Koristeći Git (Ceo Repozitorijum)
+
+1. Klonirajte repozitorijum:
 
 ```bash
 git clone https://github.com/r0073rr0r/UnusedPort.git
@@ -32,6 +34,24 @@ cd UnusedPort
 1. Dajte izvršne dozvole:
 
 ```bash
+chmod +x unused_port.sh
+```
+
+### Opcija 2: Koristeći curl (Samo Skripta)
+
+Preuzmite samo skriptu:
+
+```bash
+curl -o unused_port.sh https://raw.githubusercontent.com/r0073rr0r/UnusedPort/main/unused_port.sh
+chmod +x unused_port.sh
+```
+
+### Opcija 3: Koristeći wget (Samo Skripta)
+
+Preuzmite samo skriptu:
+
+```bash
+wget https://raw.githubusercontent.com/r0073rr0r/UnusedPort/main/unused_port.sh
 chmod +x unused_port.sh
 ```
 
@@ -133,58 +153,6 @@ sudo ./unused_port.sh --restore-from firewall_backup_ufw_20240101_120000.txt
 ./unused_port.sh --show-last-backup
 ```
 
-## 🪟 Testiranje na Windows-u
-
-Pošto je ovo Linux skripta, možete je testirati na Windows-u na nekoliko načina:
-
-### Opcija 1: WSL (Windows Subsystem for Linux)
-
-1. Instalirajte WSL:
-
-```powershell
-wsl --install
-```
-
-1. Pokrenite WSL i navigirajte do projekta:
-
-```bash
-cd /mnt/d/Projects/UnusedPort
-./unused_port.sh --help
-```
-
-### Opcija 2: Docker
-
-1. Instalirajte Docker Desktop za Windows
-1. Pokrenite Linux kontejner:
-
-```bash
-docker run -it --rm -v /d/Projects/UnusedPort:/workspace ubuntu:latest bash
-```
-
-1. U kontejneru:
-
-```bash
-apt-get update
-apt-get install -y bash ufw iptables iproute2 lsof
-cd /workspace
-chmod +x unused_port.sh
-./unused_port.sh --help
-```
-
-### Opcija 3: Virtualna mašina
-
-Koristite VirtualBox ili VMware sa Linux distribucijom.
-
-## 🧪 Testiranje
-
-Za pokretanje testova, pogledajte `tests/README.md` ili pokrenite:
-
-```bash
-# U Linux okruženju (WSL, Docker, ili Linux VM)
-cd tests
-./run_tests.sh
-```
-
 ## ⚠️ Sigurnost
 
 ⚠️ **UPOZORENJE**: Uklanjanje firewall pravila može uticati na sigurnost i konektivnost sistema. Uvek:
@@ -207,7 +175,7 @@ Ovaj projekat je licenciran pod MIT licencom - pogledajte [LICENSE](LICENSE) faj
 
 ## 👤 Autor
 
-**Velimir Majstorov**
+Velimir Majstorov
 
 ## 🤝 Kontribucije
 

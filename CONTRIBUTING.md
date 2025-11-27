@@ -7,6 +7,7 @@ Thank you for your interest in contributing to Unused Port Checker! 🎉
 ### Reporting Bugs
 
 If you find a bug, please open an issue with:
+
 - A clear description of the bug
 - Steps to reproduce the issue
 - Expected behavior vs actual behavior
@@ -16,6 +17,7 @@ If you find a bug, please open an issue with:
 ### Suggesting Features
 
 We welcome feature suggestions! Please open an issue with:
+
 - A clear description of the feature
 - Why this feature would be useful
 - Any examples or use cases
@@ -40,6 +42,7 @@ We welcome feature suggestions! Please open an issue with:
 ### Testing
 
 Please test your changes on:
+
 - Different Linux distributions (if possible)
 - Both UFW and iptables
 - Different scenarios (dry-run, remove, restore, etc.)
@@ -49,4 +52,3 @@ Please test your changes on:
 Feel free to open an issue for any questions or discussions.
 
 Thank you for contributing! 🙏
-

@@ -18,6 +18,7 @@ If you discover a security vulnerability, please **do not** open a public issue.
 Please email security concerns to: [Your Email Address]
 
 Include the following information:
+
 - Description of the vulnerability
 - Steps to reproduce
 - Potential impact
@@ -50,4 +51,3 @@ When using this script:
 ## Security Updates
 
 Security updates will be released as patches to the latest version. Please keep your copy of the script up to date.
-
