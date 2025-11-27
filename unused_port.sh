@@ -930,7 +930,7 @@ if [[ "$REMOVE_MODE" == true ]]; then
   
   # Confirmation prompt
   if [[ "$SKIP_CONFIRM" != true ]]; then
-    local rule_count=${#unused_rule_numbers[@]}
+    rule_count=${#unused_rule_numbers[@]}
     echo -e "${BOLD}${RED}WARNING: This will remove $rule_count firewall rule(s).${NC}"
     if [[ "$SKIP_BACKUP" != true ]]; then
       echo -e "${GREEN}Backup created: $backup_file${NC}"
