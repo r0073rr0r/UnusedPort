@@ -51,14 +51,14 @@ unused_port --help
 
 ### Opcija 2: Koristeći Git (Ceo Repozitorijum)
 
-1. Klonirajte repozitorijum:
+- Klonirajte repozitorijum:
 
 ```bash
 git clone https://github.com/r0073rr0r/UnusedPort.git
 cd UnusedPort
 ```
 
-1. Dajte izvršne dozvole:
+- Dajte izvršne dozvole:
 
 ```bash
 chmod +x unused_port.sh

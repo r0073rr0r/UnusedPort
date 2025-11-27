@@ -51,14 +51,14 @@ unused_port --help
 
 ### Option 2: Using Git (Full Repository)
 
-1. Clone the repository:
+- Clone the repository:
 
 ```bash
 git clone https://github.com/r0073rr0r/UnusedPort.git
 cd UnusedPort
 ```
 
-1. Make it executable:
+- Make it executable:
 
 ```bash
 chmod +x unused_port.sh
