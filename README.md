@@ -25,7 +25,7 @@ This bash script checks which ports from firewall rules are currently not in use
 1. Clone or download the script:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/r0073rr0r/UnusedPort.git
 cd UnusedPort
 ```
 

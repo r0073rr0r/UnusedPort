@@ -25,7 +25,7 @@ Ova bash skripta proverava koje portove iz firewall pravila trenutno nisu u upot
 1. Klonirajte ili preuzmite skriptu:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/r0073rr0r/UnusedPort.git
 cd UnusedPort
 ```
 
