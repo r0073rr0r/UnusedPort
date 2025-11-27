@@ -22,7 +22,34 @@ This bash script checks which ports from firewall rules are currently not in use
 
 ## 🚀 Installation
 
-### Option 1: Using Git (Full Repository)
+### Option 1: Using APT Repository (Recommended)
+
+Install from the official APT repository:
+
+1. Add the repository and GPG key:
+
+```bash
+# Download and add the GPG key
+curl -fsSL https://peace.dbase.in.rs/public.key | sudo gpg --dearmor -o /usr/share/keyrings/peace-repo.gpg
+
+# Add the repository
+echo "deb [signed-by=/usr/share/keyrings/peace-repo.gpg] https://peace.dbase.in.rs stable main" | sudo tee /etc/apt/sources.list.d/peace.list
+```
+
+1. Update package list and install:
+
+```bash
+sudo apt update
+sudo apt install unused-port
+```
+
+1. Verify installation:
+
+```bash
+unused_port --help
+```
+
+### Option 2: Using Git (Full Repository)
 
 1. Clone the repository:
 
@@ -37,7 +64,7 @@ cd UnusedPort
 chmod +x unused_port.sh
 ```
 
-### Option 2: Using curl (Script Only)
+### Option 3: Using curl (Script Only)
 
 Download only the script:
 
@@ -46,7 +73,7 @@ curl -o unused_port.sh https://raw.githubusercontent.com/r0073rr0r/UnusedPort/ma
 chmod +x unused_port.sh
 ```
 
-### Option 3: Using wget (Script Only)
+### Option 4: Using wget (Script Only)
 
 Download only the script:
 
