@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Version
+VERSION="1.0.2"
+
 # Exit on undefined variables (but allow command failures for grep, etc. since they're expected)
 # Note: We use 'set -u' instead of 'set -eu' because grep/lsof failures when ports aren't found are expected,
 # not errors. Individual functions handle their own error checking.
@@ -112,9 +115,18 @@ check_firewall_active() {
   fi
 }
 
+# Get script name (without path)
+SCRIPT_NAME=$(basename "$0" 2>/dev/null || echo "unused_port")
+
+# Version function
+show_version() {
+  echo "unused_port version $VERSION"
+  exit 0
+}
+
 # Help function
 show_help() {
-  echo -e "${BOLD}${BLUE}Usage:${NC} $0 [OPTIONS]"
+  echo -e "${BOLD}${BLUE}Usage:${NC} $SCRIPT_NAME [OPTIONS]"
   echo ""
   echo -e "${BOLD}Options:${NC}"
   echo "  -p, --port PORT      Check a specific port number"
@@ -132,24 +144,25 @@ show_help() {
   echo "  --lsof                Use 'lsof' for port checking"
   echo "  --ufw                 Use UFW firewall (default)"
   echo "  --iptables            Use iptables firewall"
+  echo "  -v, --version         Show version information"
   echo "  -h, --help            Show this help message"
   echo ""
   echo -e "${BOLD}Examples:${NC}"
-  echo "  $0                      # Check all UFW ports using ss"
-  echo "  $0 -p 8080              # Check port 8080"
-  echo "  $0 --iptables           # Check iptables ports"
-  echo "  $0 --lsof --ufw         # Use lsof with UFW"
-  echo "  $0 --dry-run            # Preview unused ports that would be removed"
-  echo "  $0 --remove             # Remove unused ports (with backup and confirmation)"
-  echo "  $0 --remove --yes       # Remove unused ports with backup, no confirmation"
-  echo "  $0 --remove --force     # Remove unused ports without backup (not recommended)"
-  echo "  $0 --restore            # Restore firewall rules from last backup"
-  echo "  $0 --restore FILE      # Restore firewall rules from specific backup file"
-  echo "  $0 --restore-from FILE # Restore firewall rules from specific backup file"
-  echo "  $0 --rrstore            # Restore firewall rules from last backup (alias)"
-  echo "  $0 --rrstore-from FILE # Restore firewall rules from specific backup file (alias)"
-  echo "  $0 --list-backups       # List all available backup files"
-  echo "  $0 --show-last-backup   # Show path to the last backup file"
+  echo "  $SCRIPT_NAME                      # Check all UFW ports using ss"
+  echo "  $SCRIPT_NAME -p 8080              # Check port 8080"
+  echo "  $SCRIPT_NAME --iptables           # Check iptables ports"
+  echo "  $SCRIPT_NAME --lsof --ufw         # Use lsof with UFW"
+  echo "  $SCRIPT_NAME --dry-run            # Preview unused ports that would be removed"
+  echo "  $SCRIPT_NAME --remove             # Remove unused ports (with backup and confirmation)"
+  echo "  $SCRIPT_NAME --remove --yes       # Remove unused ports with backup, no confirmation"
+  echo "  $SCRIPT_NAME --remove --force     # Remove unused ports without backup (not recommended)"
+  echo "  $SCRIPT_NAME --restore            # Restore firewall rules from last backup"
+  echo "  $SCRIPT_NAME --restore FILE      # Restore firewall rules from specific backup file"
+  echo "  $SCRIPT_NAME --restore-from FILE # Restore firewall rules from specific backup file"
+  echo "  $SCRIPT_NAME --rrstore            # Restore firewall rules from last backup (alias)"
+  echo "  $SCRIPT_NAME --rrstore-from FILE # Restore firewall rules from specific backup file (alias)"
+  echo "  $SCRIPT_NAME --list-backups       # List all available backup files"
+  echo "  $SCRIPT_NAME --show-last-backup   # Show path to the last backup file"
   echo ""
   echo -e "${BOLD}Description:${NC}"
   echo "  This script checks which ports from firewall rules (UFW or iptables) are not"
@@ -184,6 +197,9 @@ while [[ $# -gt 0 ]]; do
     -h|--help)
       show_help
       exit 0
+      ;;
+    -v|--version)
+      show_version
       ;;
     -p|--port)
       if [[ -z "$2" ]]; then
@@ -519,8 +535,8 @@ list_backup_files() {
   done
   
   echo -e "${BOLD}To restore from a backup, use:${NC}"
-  echo -e "  $0 --restore                    # Restore from latest backup"
-  echo -e "  $0 --restore-from <filename>    # Restore from specific backup"
+  echo -e "  $SCRIPT_NAME --restore                    # Restore from latest backup"
+  echo -e "  $SCRIPT_NAME --restore-from <filename>    # Restore from specific backup"
   exit 0
 }
 
@@ -564,10 +580,10 @@ show_last_backup() {
     echo -e "${BOLD}Modified:${NC} $date_str"
     echo ""
     echo -e "${BOLD}To restore from this backup, run:${NC}"
-    echo -e "  $0 --restore"
+    echo -e "  $SCRIPT_NAME --restore"
     echo ""
     echo -e "${BOLD}Or restore from this specific file:${NC}"
-    echo -e "  $0 --restore-from $(basename "$backup_file")"
+    echo -e "  $SCRIPT_NAME --restore-from $(basename "$backup_file")"
   fi
   
   exit 0
@@ -934,7 +950,7 @@ if [[ "$REMOVE_MODE" == true ]]; then
     echo -e "${BOLD}${RED}WARNING: This will remove $rule_count firewall rule(s).${NC}"
     if [[ "$SKIP_BACKUP" != true ]]; then
       echo -e "${GREEN}Backup created: $backup_file${NC}"
-      echo -e "${YELLOW}You can restore using: $0 --restore${NC}"
+      echo -e "${YELLOW}You can restore using: $SCRIPT_NAME --restore${NC}"
     fi
     echo -e "${BOLD}Are you sure you want to continue? (yes/no):${NC} "
     read -r confirmation
@@ -1028,6 +1044,6 @@ if [[ "$REMOVE_MODE" == true ]]; then
   if [[ "$SKIP_BACKUP" != true ]] && [[ -n "$backup_file" ]]; then
     echo ""
     echo -e "${BOLD}${GREEN}Backup saved: $backup_file${NC}"
-    echo -e "${YELLOW}To restore deleted rules, run: $0 --restore${NC}"
+    echo -e "${YELLOW}To restore deleted rules, run: $SCRIPT_NAME --restore${NC}"
   fi
 fi
