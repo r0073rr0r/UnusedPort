@@ -1,0 +1,26 @@
+# Backup files
+*.backup
+*_backup_*
+
+# Temporary files
+*.tmp
+*.temp
+/tmp/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Test files
+tests/output/
+tests/tmp/
+

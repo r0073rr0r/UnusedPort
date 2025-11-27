@@ -203,12 +203,12 @@ cd tests
 
 ## 📄 License
 
-[Add your license here]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👤 Author
 
-[Your name]
+**Velimir Majstorov**
 
 ## 🤝 Contributing
 
-Pull requests and issues are welcome!
+Contributions, issues, and feature requests are welcome! Feel free to check the [Contributing Guide](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md).

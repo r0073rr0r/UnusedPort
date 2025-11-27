@@ -203,12 +203,12 @@ cd tests
 
 ## 📄 Licenca
 
-[Ovde dodajte vašu licencu]
+Ovaj projekat je licenciran pod MIT licencom - pogledajte [LICENSE](LICENSE) fajl za detalje.
 
 ## 👤 Autor
 
-[Vaše ime]
+**Velimir Majstorov**
 
 ## 🤝 Kontribucije
 
-Dobrodošli su pull request-ovi i issue-i!
+Kontribucije, issue-i i feature request-ovi su dobrodošli! Slobodno pogledajte [Contributing Guide](CONTRIBUTING.md) i [Code of Conduct](CODE_OF_CONDUCT.md).
